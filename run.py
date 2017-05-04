@@ -9,8 +9,13 @@ from core.model import SimpleNeuralNetwork
 from core.model import CNN
 from gym import wrappers
 sys.path.append("game/")
-import wrapped_flappy_bird as game
+import game.wrapped_flappy_bird as game
 import cv2
+import tensorflow as tf
+
+FLAGS=tf.flags.FLAGS
+
+tf.flags.DEFINE_string("option","train","option:train or test")
 
 class CartPoleEnv(Env):
     def __init__(self, monitor=False):
