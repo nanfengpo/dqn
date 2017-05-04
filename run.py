@@ -115,9 +115,11 @@ def train_FlappyBirdEnv(train=True):
         decay_factor=0.999999,
         save_per_step=1000,
         logdir='./tmp/FlappyBird/')
-    if train:
+    if(FLAGS.option == "train"):
+        print("training...")
         qnetwork.train(10000)
     else:
+        print("game begin")
         runGame(env, qnetwork)
 
 
